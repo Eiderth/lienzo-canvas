@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s ease-in-out;
+}
+body{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+.container-canvas{
+    text-align: center;
+    font-size: clamp(12px,  8px + 2vw, 20px);
+    width: clamp(60%, 700px, 90%);
+    aspect-ratio: 1/1;
+    max-height: 60%;
+    padding: 1rem;
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.paintCanvas{
+    width: 100%;
+    height: 90%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.ajustes{
+    background-color: blanchedalmond;
+    width: clamp(60%, 700px, 90%);
+    padding: 1rem;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70% 30%;
+    place-items: center;
+    font-size: clamp(12px, 5vw, 16px);
+    font-weight: bold;
+    gap: 5px;
+    font-weight: bold;
+    & input[type="color"]{
+        background-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        color: whitesmoke;
+        background-color: aliceblue;
+        border: solid 3px black;
+    }
+    & input[type="color"]::-webkit-color-swatch{
+        border-radius: 100%;
+    }
+    & input[type="color"]::-moz-color-swatch{
+        border-radius: 100%;
+    }
+    & label[for="color"]{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    & select{
+        height: auto;
+        aspect-ratio: 1/1;
+        background-color: white;
+        border: solid 3px black;
+        border-radius: 100%;
+        text-align: center;
+        padding: 5px;
+    }
+    & label[for="grosor"]{
+        grid-row: 2;
+        grid-column: 2;
+    }
+    & .borrador{
+        height: 50%;
+        aspect-ratio: 1/1;
+    }
+}
+.borrar{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: clamp(14px, 4vw, 18px);
+}
+.guia{
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.397);
+    position: absolute;
+    transition: none;
+    box-sizing: border-box;
+}
